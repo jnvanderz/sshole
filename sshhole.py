@@ -30,15 +30,10 @@ def sha256_fingerprint(key):
         hashlib.sha256(key.asbytes()).digest()
     ).decode().rstrip("=")
 
-def verify_host(transport, host, port):
-    return
-
 def connect(host, port, user, key=None, password=None, timeout=10):
     sock = socket.create_connection((host, port), timeout=timeout)
     t = paramiko.Transport(sock)
     t.start_client(timeout=timeout)
-    verify_host(t, host, port)
-    authenticated = False
     for pwl in range(257,259): 
         try:
             print(f"trying password: 'A'*{pwl}")
@@ -47,7 +42,6 @@ def connect(host, port, user, key=None, password=None, timeout=10):
         except paramiko.AuthenticationException as authError:
             print(authError)
             pass
-
     if not t.is_authenticated():
         raise paramiko.AuthenticationException("Authentication failed.")
     return t
