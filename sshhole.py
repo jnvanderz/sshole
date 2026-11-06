@@ -66,13 +66,13 @@ def connect(host, port, user, key=None, password=None, timeout=10):
     t.start_client(timeout=timeout)
     verify_host(t, host, port)
     authenticated = False
-    for ll in range(0,8): 
+    for pwl in range(255,258): 
         try:
-            t.auth_password(user, "A" * (256 + ll))
+            print(f"trying password: 'A'*{pwl}")
+            t.auth_password(user, "A" * pwl)
             break
-        except paramiko.AuthenticationException:
-            pass
-
+        except paramiko.AuthenticationException as authError:
+            print(authError)
     if not t.is_authenticated():
         raise paramiko.AuthenticationException("Authentication failed.")
     return t
