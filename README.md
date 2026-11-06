@@ -51,7 +51,12 @@ You may change this message by editing /etc/motd.
 localhost:~$
 ```
 
--------------------------------------------------------------------------------------
+
+
+
+
+
+
 
 ## ⚙️ Prerequisites
 
