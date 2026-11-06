@@ -51,6 +51,8 @@ You may change this message by editing /etc/motd.
 localhost:~$
 ```
 
+-------------------------------------------------------------------------------------
+
 ## ⚙️ Prerequisites
 
 Make sure you have Python 3.x installed on your system. This tool requires the `paramiko` library for handling SSH connections.
