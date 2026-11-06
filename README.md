@@ -18,6 +18,7 @@ sudo sh check.sh
 ## 💥 How to make myself vulnerable?
 ```bash
 vi /etc/ssh/sshd_config
+#PermitRootLogin yes
 rc-service sshd restart
 rc-update add sshd
 adduser -D ssholeuser
