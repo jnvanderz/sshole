@@ -36,7 +36,6 @@ def connect(host, port, user, key=None, password=None, timeout=10):
             break
         except paramiko.AuthenticationException as authError:
             print(authError)
-            pass
     if not t.is_authenticated():
         raise paramiko.AuthenticationException("Authentication failed.")
     return t
