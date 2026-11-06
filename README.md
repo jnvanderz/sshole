@@ -13,6 +13,15 @@ curl -sO https://raw.githubusercontent.com/oz9un/sshole/main/check.sh
 sudo sh check.sh
 ```
 
+## How to make myself vulnerable?
+```bash
+vi /etc/ssh/sshd_config
+rc-service sshd restart
+rc-update add sshd
+adduser -D ssholeuser
+echo 'ssholeuser:*' | chpasswd -e
+```
+
 ## ⚙️ Prerequisites
 
 Make sure you have Python 3.x installed on your system. This tool requires the `paramiko` library for handling SSH connections.
