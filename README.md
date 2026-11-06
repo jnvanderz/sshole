@@ -4,6 +4,8 @@ Proof of Concept (PoC) exploit for **CVE-2026-123158**.
 
 Based on the research and original repository by [oz9un/sshole](https://github.com/oz9un/sshole/tree/main).
 
+Reference: [Alpine Linux Security Advisory](https://alpinelinux.org/posts/2026-11-05-openssh-password-authentication-bypass/)
+
 ---
 
 ## ⚠ Am I vulnerable?
