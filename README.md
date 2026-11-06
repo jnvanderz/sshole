@@ -26,13 +26,13 @@ echo 'ssholeuser:*' | chpasswd -e
 ```
 
 ## 💻 Testing it using PuTTY
-just enter this password (right click)
+
+1. Copy and paste the following password into the password prompt (you can paste using a right-click):
 ```
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 ```
-the first time you do it, it will say: Access denied
-
-but on the exact second attempt, it will let you log in
+2. On your first attempt, it will return an **Access denied** error:
+3. On your **exact second attempt** with the same password, you will be successfully logged in:
 ```login as: ssholeuser
 ssholeuser@192.168.1.100's password:
 Access denied
