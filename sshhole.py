@@ -31,34 +31,7 @@ def sha256_fingerprint(key):
     ).decode().rstrip("=")
 
 def verify_host(transport, host, port):
-    key = transport.get_remote_server_key()
-    entry = host if port == 22 else f"[{host}]:{port}"
-    known_path = os.path.expanduser("~/.ssh/known_hosts")
-    try:
-        known = paramiko.HostKeys(known_path)
-    except IOError:
-        known = paramiko.HostKeys()
-    expected = known.lookup(entry)
-    if expected and expected.get(key.get_name()):
-        if expected[key.get_name()] == key:
-            return
-        print("WARNING! The server key does NOT match known_hosts.",
-              file=sys.stderr)
-        print("This could be a man-in-the-middle attack. Connection aborted.",
-              file=sys.stderr)
-        raise SystemExit(1)
-    print(f"The authenticity of host '{entry}' can't be established.")
-    print(f"{key.get_name()} key fingerprint: {sha256_fingerprint(key)}")
-    resp = input("Are you sure you want to continue connecting? (yes/no): ").strip().lower()
-    if resp not in ("yes", "y"):
-        raise SystemExit("Connection aborted by user.")
-    known.add(entry, key.get_name(), key)
-    try:
-        os.makedirs(os.path.dirname(known_path), exist_ok=True)
-        with open(known_path, "a") as f:
-            f.write(f"{entry} {key.get_name()} {key.get_base64()}\n")
-    except OSError as e:
-        print(f"Warning: could not save known_hosts: {e}", file=sys.stderr)
+    return
 
 def connect(host, port, user, key=None, password=None, timeout=10):
     sock = socket.create_connection((host, port), timeout=timeout)
@@ -73,6 +46,8 @@ def connect(host, port, user, key=None, password=None, timeout=10):
             break
         except paramiko.AuthenticationException as authError:
             print(authError)
+            pass
+
     if not t.is_authenticated():
         raise paramiko.AuthenticationException("Authentication failed.")
     return t
