@@ -51,12 +51,9 @@ You may change this message by editing /etc/motd.
 localhost:~$
 ```
 
+---
 
-
-
-
-
-
+> **Note:** The Python script below is **not strictly necessary** since the exploit can be triggered directly via PuTTY or any standard SSH client as shown above. However, it is provided here in case you want to use it to test or automate attempts with different password lengths.
 
 ## ⚙️ Prerequisites
 
