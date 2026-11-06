@@ -13,7 +13,7 @@ curl -sO https://raw.githubusercontent.com/oz9un/sshole/main/check.sh
 sudo sh check.sh
 ```
 
-## How to make myself vulnerable?
+## 💥 How to make myself vulnerable?
 ```bash
 vi /etc/ssh/sshd_config
 rc-service sshd restart
