@@ -10,7 +10,8 @@ Based on the research and original repository by [oz9un/sshole](https://github.c
 
 ```bash
 curl -sO https://raw.githubusercontent.com/oz9un/sshole/main/check.sh
-sudo sh check.sh```
+sudo sh check.sh
+```
 
 ## ⚙️ Prerequisites
 
