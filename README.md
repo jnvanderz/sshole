@@ -48,7 +48,7 @@ python sshole.py [user]@[host] -p [PORT]
 ### Example:
 
 ```bash
-python sshole.py admin@192.168.1.100 -p 22
+python sshole.py ssholeuser@192.168.1.100 -p 22
 ```
 
 ---
