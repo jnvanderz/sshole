@@ -25,11 +25,6 @@ import paramiko
 
 os.system("")
 
-def sha256_fingerprint(key):
-    return "SHA256:" + base64.b64encode(
-        hashlib.sha256(key.asbytes()).digest()
-    ).decode().rstrip("=")
-
 def connect(host, port, user, key=None, password=None, timeout=10):
     sock = socket.create_connection((host, port), timeout=timeout)
     t = paramiko.Transport(sock)
@@ -45,17 +40,6 @@ def connect(host, port, user, key=None, password=None, timeout=10):
     if not t.is_authenticated():
         raise paramiko.AuthenticationException("Authentication failed.")
     return t
-
-def load_key(path):
-    for kind in (paramiko.Ed25519Key, paramiko.ECDSAKey, paramiko.RSAKey):
-        try:
-            return kind.from_private_key_file(path)
-        except paramiko.PasswordRequiredException:
-            phrase = getpass.getpass("Private key passphrase: ")
-            return kind.from_private_key_file(path, password=phrase)
-        except paramiko.SSHException:
-            continue
-    raise paramiko.SSHException(f"Could not read key: {path}")
 
 def run_command(transport, command):
     chan = transport.open_session()
