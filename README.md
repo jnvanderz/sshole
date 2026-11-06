@@ -25,6 +25,29 @@ adduser -D ssholeuser
 echo 'ssholeuser:*' | chpasswd -e
 ```
 
+## 😱 Testing it using Putty
+just enter this password (right click)
+```AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+```
+the first time you do it, it will say: Access denied
+but on the exact second attempt, it will let you log in
+```login as: ssholeuser
+ssholeuser@192.168.1.100's password:
+Access denied
+ssholeuser@192.168.1.100's password:
+Welcome to Alpine!
+
+The Alpine Wiki contains a large amount of how-to guides and general
+information about administrating Alpine systems.
+See <https://wiki.alpinelinux.org/>.
+
+You can setup the system with the command: setup-alpine
+
+You may change this message by editing /etc/motd.
+
+localhost:~$
+```
+
 ## ⚙️ Prerequisites
 
 Make sure you have Python 3.x installed on your system. This tool requires the `paramiko` library for handling SSH connections.
