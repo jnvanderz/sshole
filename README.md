@@ -16,3 +16,24 @@ You can install the required dependency by running:
 
 ```bash
 pip install paramiko
+```
+
+## 🚀 Usage
+
+Run the script by specifying the target user, host, and port:
+
+```bash
+python sshole.py [user]@[host] -p [PORT]
+```
+
+### Example:
+
+```bash
+python sshole.py admin@192.168.1.100 -p 22
+```
+
+---
+
+## ⚠️ Disclaimer
+
+*This software and the information contained in this repository have been created exclusively for educational purposes and security research. Using this tool against systems without explicit authorization is illegal. The authors assume no liability for any misuse or damage caused by this material.*
